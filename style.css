@@ -184,7 +184,6 @@ form {
             margin-top: 1rem;
             color: rgba(92, 92, 92, 0.555);
             cursor: pointer;
-            transition: $transition;
 
             &:focus,
             &:hover {
