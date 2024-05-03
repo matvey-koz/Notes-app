@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
     <script defer src="./note.js"></script>
-    <title>Note Taker Application</title>
+    <title>Notes App</title>
 </head>
 
 <body>
@@ -20,16 +23,16 @@
         </div>
     </div>
     <div class="form-container">
-        <h1>Note Taker</h1>
+        <h1><u>Notes App</u></h1>
         <h3>Add a New Note:</h3>
         <form>
-            <label for="title">Title
-                <input type="text" id="title" placeholder="Enter a note title.">
+            <label for="title">Note name:
+                <input type="text" id="title" placeholder="Enter a note name.">
             </label>
             <label for="note">Note
                 <textarea type="text" id="note" cols="30" rows="10" placeholder="Enter note text."></textarea>
             </label>
-            <input type="submit">
+            <button class="addNote" type="submit">Add Note</button>
         </form>
     </div>
     <div class="note-container">

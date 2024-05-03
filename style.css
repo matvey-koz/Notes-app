@@ -1,0 +1,206 @@
+*,
+*::after,
+*::before {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Jaro;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    background-color: #454545;
+}
+
+.modal-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    pointer-events: none;
+
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .modal {
+        max-width: 700px;
+        max-height: 80vh;
+        overflow: auto;
+        background-color: white;
+
+        .modal__title {
+            font-size: 2rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            max-width: 85%;
+        }
+
+        .modal__btn {
+            position: absolute;
+            top: .5rem;
+            right: .5rem;
+            color: rgb(92, 92, 92);
+            font-size: 2rem;
+            line-height: 2rem;
+            height: 40px;
+            width: 40px;
+            cursor: pointer;
+            background-color: white;
+
+            &:hover,
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+.form-container {
+    max-width: 1000px;
+    margin: 1rem auto;
+
+    h1 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    .message {
+        margin: 1rem 0 1.5rem;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+    }
+}
+
+form {
+    display: grid;
+    grid-gap: 1rem;
+    margin: 1rem 0;
+    width: 100%;
+
+    label,
+    input,
+    textarea {
+        font-size: inherit;
+    }
+
+    [for="title"],
+    [for="note"] {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 1rem;
+        grid-gap: 1rem;
+        background-color: rgba(160, 160, 160, .2);
+        font-weight: bold;
+
+        input,
+        textarea {
+            flex: 1 1 80%;
+            border: 0.5px solid black;
+            padding: .5rem;
+            color: black;
+            width: 100%;
+
+            &:focus {
+                outline: 1.5px solid black;
+            }
+        }
+    }
+
+    .addNote {
+        background-color: rgb(73, 223, 148);
+        border: 3px solid transparent;
+        width: 200px;
+        margin: auto;
+        border-radius: 99px;
+        font-size: 1.3rem;
+        color: black;
+        padding: .5rem;
+        cursor: pointer;
+        transition: all 250ms ease-in-out;
+
+        &:hover,
+        &:focus {
+            outline: none;
+            box-shadow: none;
+            border: 3px solid rgba(47, 132, 147, 0.5);
+        }
+    }
+}
+
+.note-container {
+    margin: 2rem auto 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 1.5rem;
+
+    .note {
+        padding: 1.5rem;
+        transition: all 250ms ease-in-out;
+        border: 2px solid black;
+        border-radius: 30px;
+    }
+
+    .note__title {
+        font-size: 2rem;
+        margin-bottom: .5rem;
+    }
+
+    .note__body {
+        overflow: hidden;
+        max-height: 8rem;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 4;
+        background-color: rgba(237, 230, 230, 0.575);
+    }
+
+    .note__btns {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: .5rem;
+
+        .note__btn {
+            font-size: inherit;
+            padding: .5rem 1rem;
+            margin-top: 1rem;
+            color: rgba(92, 92, 92, 0.555);
+            cursor: pointer;
+            transition: $transition;
+
+            &:focus,
+            &:hover {
+                box-shadow: none;
+            }
+        }
+
+        .note__view {
+            background-color: rgba(92, 92, 92, 0.555);
+
+        }
+
+        .note__delete {
+            background-color: rgb(165, 49, 49);
+            color: white;
+
+        }
+    }
+}
